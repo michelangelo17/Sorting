@@ -19,20 +19,15 @@ def selection_sort(arr):
 
 
 def bubble_sort(arr):
-    swap = True
-    while swap == True:
+    while True:
         swapcount = 0
         for i in range(0, len(arr) - 1):
             if arr[i] > arr[i + 1]:
                 a, b = arr[i], arr[i+1]
-                arr[i] = b
-                arr[i+1] = a
+                arr[i], arr[i+1] = b, a
                 swapcount += 1
-        if swapcount > 0:
-            swap = True
-        else:
-            swap = False
-    return arr
+        if swapcount == 0:
+            return arr
 
 
 # STRETCH: implement the Count Sort function below
