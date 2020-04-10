@@ -30,15 +30,31 @@ def merge_sort(arr):
 
 
 def merge_in_place(arr, start, mid, end):
-    # TO-DO
+    i, j = start, mid+1
+    if arr[mid] < arr[j]:
+        return arr
+    print(arr[start:mid+1], i, arr[mid+1:end+1], j)
+    while i <= mid and j <= end:
+        if arr[i] <= arr[j]:
+            i += 1
+        else:
+            a, b = arr[i], arr[j]
+            arr[i], arr[j] = b, a
 
     return arr
 
 
 def merge_sort_in_place(arr, l, r):
-    # TO-DO
-
+    if l < r:
+        m = (l + r) // 2
+        merge_sort_in_place(arr, l, m)
+        merge_sort_in_place(arr, m + 1, r)
+        merge_in_place(arr, l, m, r)
     return arr
+
+
+test = [5, 1, 3, 5, 10, 4, 5, 7, 8, 9, 7]
+print(merge_sort_in_place(test, 0, len(test) - 1))
 
 
 # STRETCH: implement the Timsort function below

@@ -23,8 +23,8 @@ def bubble_sort(arr):
         swapcount = 0
         for i in range(0, len(arr) - 1):
             if arr[i] > arr[i + 1]:
-                a, b = arr[i], arr[i+1]
-                arr[i], arr[i+1] = b, a
+                a, b = arr[i], arr[i + 1]
+                arr[i], arr[i + 1] = b, a
                 swapcount += 1
         if swapcount == 0:
             return arr
@@ -39,7 +39,7 @@ def count_sort(arr):
     if min(arr) < 0:
         return "Error, negative numbers not allowed in Count Sort"
     maximum = max(arr)
-    count = [0 for _ in range(maximum+1)]
+    count = [0 for _ in range(maximum + 1)]
     for i in arr:
         count[i] += 1
     sum = 0
