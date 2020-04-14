@@ -32,7 +32,7 @@ def merge_sort(arr):
 def merge_in_place(arr, start, mid, end):
     l, r = start, mid+1
     index = start
-    while l < r and index < end and r <= end:
+    while l < r and r <= end:
         if arr[l] <= arr[r]:
             l += 1
             index += 1
